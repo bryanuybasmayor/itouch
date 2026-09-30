@@ -1,0 +1,40 @@
+/* ============================================================
+   I-TOUCH MASSAGE SPA CLINIC — Custom Stylesheet
+   Complements Tailwind (loaded via CDN in index.html).
+   Contains only the bespoke touches Tailwind utilities
+   alone can't express.
+   ============================================================ */
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Soft organic blob mask for imagery — avoids "tech box" framing */
+.organic-frame {
+  border-radius: 58% 42% 46% 54% / 48% 52% 48% 52%;
+}
+.organic-frame-alt {
+  border-radius: 42% 58% 54% 46% / 52% 48% 52% 48%;
+}
+
+/* Gentle slow float for decorative gold orb */
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+.animate-drift {
+  animation: drift 9s ease-in-out infinite;
+}
+
+/* Section heading accent rule */
+.gold-rule::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 1px;
+  margin-top: 1.25rem;
+  background: linear-gradient(90deg, #A87818, rgba(168, 120, 24, 0));
+}
+.gold-rule-center::after {
+  margin-inline: auto;
+}
