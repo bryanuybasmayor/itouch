@@ -38,3 +38,38 @@ body {
 .gold-rule-center::after {
   margin-inline: auto;
 }
+
+/* ---- Navigation active state (current section) ----
+   .is-active is toggled by the scrollspy in js/main.js; aria-current
+   mirrors it for assistive tech. */
+.nav-link {
+  position: relative;
+}
+
+/* Gold underline that grows in under the current (or hovered) item */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(168, 120, 24, 0), #A87818, rgba(168, 120, 24, 0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.is-active {
+  color: #C9A45C; /* gold */
+}
+
+/* Mobile menu items: colour only (they already have a bottom border) */
+.mobile-link.is-active {
+  color: #C9A45C; /* gold */
+}
